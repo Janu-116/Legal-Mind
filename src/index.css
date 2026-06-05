@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-legal-600;
+  }
+
+  body {
+    @apply bg-legal-900 text-legal-100 font-sans antialiased;
+    background: linear-gradient(180deg, #0a0a0f 0%, #0f0f1a 50%, #12121a 100%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-legal-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-legal-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-legal-500;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-legal-800/50 backdrop-blur-xl border border-legal-600/30 rounded-2xl;
+  }
+
+  .gold-gradient-text {
+    @apply bg-gradient-to-r from-gold-400 via-yellow-300 to-gold-500 bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 text-legal-300 hover:text-gold-400 hover:bg-legal-700/50;
+  }
+
+  .nav-item.active {
+    @apply text-gold-400 bg-legal-700/50 border border-gold-400/20;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-gold-500 to-gold-400 text-legal-900 font-semibold rounded-xl 
+           transition-all duration-300 shadow-lg shadow-gold-500/20
+           hover:shadow-xl hover:shadow-gold-500/30;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-legal-700 text-legal-100 font-medium rounded-xl border border-legal-600
+           hover:bg-legal-600 hover:border-legal-500 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:border-gold-400/30 hover:shadow-lg hover:shadow-gold-500/5;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-legal-800 border border-legal-600 rounded-xl text-legal-100 
+           placeholder:text-legal-400 focus:outline-none focus:border-gold-400/50 focus:ring-2 
+           focus:ring-gold-400/20 transition-all duration-200;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif font-bold text-white mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-legal-300 text-lg mb-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
